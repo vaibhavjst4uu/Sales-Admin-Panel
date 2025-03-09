@@ -30,9 +30,9 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     timestamps: true,
-    paranoid: true,
     deletedAt: 'deleted_at',
-    underscored: true,
+    createdAt: 'created_at',
+    updatedAt: 'updated_at',
     modelName: 'Stock',
   });
   return Stock;

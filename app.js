@@ -3,15 +3,11 @@ const cors = require("cors");
 const express = require("express");
 const compression = require('compression');
 const port = process.env.PORT || 8080;
-
-
-
-const path = require("path");
 const app = express();
-// const Routes = require("./src/routes/index");
+
+const Routes = require("./src/routes/index");
 const {limiter} = require("./src/middlewares/rateLimiter")
 
-app.set("view engine", "ejs");
 
 const corsOptions = {
   origin: (origin, callback) => {
@@ -46,7 +42,7 @@ app.use(compression());
 // Rate Limiter Middleware
 app.use(limiter);
 
-// app.use('/api/v1', Routes)
+app.use('/api/v1', Routes)
 
 // 404 Not Found Middleware
 app.use((req, res, next) => {

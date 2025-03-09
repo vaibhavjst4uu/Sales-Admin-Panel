@@ -6,7 +6,7 @@ const retailerRoutes = require("./retailerRoutes");
 const wholesalerRoutes = require("./wholesalerRoutes");
 
 // Not adding authorization middleware here as login is not needed
-router.use("/retailer", retailerRoutes);
-router.use("/wholesaler", wholesalerRoutes);
+router.use("/retailers", retailerRoutes);
+router.use("/wholesalers", wholesalerRoutes);
 
 module.exports = router;
